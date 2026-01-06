@@ -73,7 +73,8 @@ fn is_valid_text(bytes: &[u8]) -> bool {
         .filter(|&&b| b < 32 && b != b'\n' && b != b'\r' && b != b'\t')
         .count();
 
-    control_count < bytes.len() / 10 // Less than 10% control chars
+    // Less than 10% control chars (use multiplication to avoid integer division truncation)
+    control_count * 10 < bytes.len() || control_count == 0
 }
 
 pub fn format_as_hex(bytes: &[u8]) -> Vec<Line<'static>> {
