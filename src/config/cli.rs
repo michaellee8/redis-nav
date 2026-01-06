@@ -13,7 +13,7 @@ pub struct Cli {
     pub host: String,
 
     /// Redis port
-    #[arg(short, long, default_value = "6379")]
+    #[arg(short, long, default_value = "6380")]
     pub port: u16,
 
     /// Redis password (or use REDIS_PASSWORD env)

@@ -40,7 +40,7 @@ impl Default for AppConfig {
     fn default() -> Self {
         Self {
             connection: ConnectionConfig {
-                url: "redis://127.0.0.1:6379".to_string(),
+                url: "redis://127.0.0.1:6380".to_string(),
                 db: 0,
                 readonly: false,
             },
