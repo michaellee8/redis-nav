@@ -1,0 +1,30 @@
+# redis-nav configuration example
+# Copy to ~/.config/redis-nav/config.toml
+
+[defaults]
+delimiters = [":", "/"]
+theme = "dark"
+
+[profiles.local]
+url = "redis://127.0.0.1:6380"
+db = 0
+
+[profiles.staging]
+host = "staging.internal"
+port = 6379
+password_env = "STAGING_REDIS_PASSWORD"
+delimiters = [":"]
+readonly = true
+protected_namespaces = [
+    { prefix = "prod:", level = "block" },
+]
+
+[profiles.prod]
+url = "rediss://prod.example.com:6380"
+password_env = "PROD_REDIS_PASSWORD"
+readonly = true
+protected_namespaces = [
+    { prefix = "billing:", level = "block" },
+    { prefix = "user:", level = "confirm" },
+    { prefix = "cache:", level = "warn" },
+]
