@@ -2,6 +2,8 @@
 
 A terminal UI for browsing and editing Redis databases with tree-based key hierarchy, syntax highlighting, and safety features.
 
+[![asciicast](https://asciinema.org/a/N7AQVWsQhl2BYlDB.svg)](https://asciinema.org/a/N7AQVWsQhl2BYlDB)
+
 ## Features
 
 - Tree-based key hierarchy view with multiple delimiter support
